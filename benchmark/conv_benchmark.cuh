@@ -1,0 +1,8 @@
+//
+// Created by aleksander on 05.03.19.
+//
+
+#ifndef LIBLOWBIT_CNN_CONV_BENCHMARK_H
+#define LIBLOWBIT_CNN_CONV_BENCHMARK_H
+
+#endif //LIBLOWBIT_CNN_CONV_BENCHMARK_H

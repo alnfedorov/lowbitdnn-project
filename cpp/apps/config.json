@@ -1,0 +1,196 @@
+{
+    "repeats": 1,
+    "configs":{
+        "half":{
+            "input_data_type": "half",
+            "input_tensor_format": "NCHW",
+
+            "filters_data_type": "half",
+            "filters_tensor_format": "NCHW",
+
+            "accumulator_data_type": "half",
+            "output_data_type": "half",
+            "output_tensor_format": "NCHW"
+        },
+        "float":{
+            "input_data_type": "float",
+            "input_tensor_format": "NCHW",
+
+            "filters_data_type": "float",
+            "filters_tensor_format": "NCHW",
+
+            "accumulator_data_type": "float",
+            "output_data_type": "float",
+            "output_tensor_format": "NCHW"
+        },
+        "double": {
+            "input_data_type": "double",
+            "input_tensor_format": "NCHW",
+
+            "filters_data_type": "double",
+            "filters_tensor_format": "NCHW",
+
+            "accumulator_data_type": "double",
+            "output_data_type": "double",
+            "output_tensor_format": "NCHW"
+        },
+        "int8x4": {
+            "input_data_type": "int8x4",
+            "input_tensor_format": "NCHW_VECT_C",
+
+            "filters_data_type": "int8x4",
+            "filters_tensor_format": "NCHW_VECT_C",
+
+            "accumulator_data_type": "int32",
+            "output_data_type": "int8x4",
+            "output_tensor_format": "NCHW_VECT_C"
+        },
+        "int8x4_ext": {
+            "input_data_type": "int8x4",
+            "input_tensor_format": "NCHW_VECT_C",
+
+            "filters_data_type": "int8x4",
+            "filters_tensor_format": "NCHW_VECT_C",
+
+            "accumulator_data_type": "int32",
+            "output_data_type": "float",
+            "output_tensor_format": "NCHW"
+        },
+        "uint8x4": {
+            "input_data_type": "uint8x4",
+            "input_tensor_format": "NCHW_VECT_C",
+
+            "filters_data_type": "int8x4",
+            "filters_tensor_format": "NCHW_VECT_C",
+
+            "accumulator_data_type": "int32",
+            "output_data_type": "int8x4",
+            "output_tensor_format": "NCHW_VECT_C"
+        },
+        "uint8x4_ext": {
+            "input_data_type": "uint8x4",
+            "input_tensor_format": "NCHW_VECT_C",
+
+            "filters_data_type": "int8x4",
+            "filters_tensor_format": "NCHW_VECT_C",
+
+            "accumulator_data_type": "int32",
+            "output_data_type": "float",
+            "output_tensor_format": "NCHW"
+        },
+        "int8x32": {
+            "input_data_type": "int8x32",
+            "input_tensor_format": "NCHW_VECT_C",
+
+            "filters_data_type": "int8x32",
+            "filters_tensor_format": "NCHW_VECT_C",
+
+            "accumulator_data_type": "int32",
+            "output_data_type": "int8x32",
+            "output_tensor_format": "NCHW_VECT_C"
+        },
+        "int8x32_ext": {
+            "input_data_type": "int8x32",
+            "input_tensor_format": "NCHW_VECT_C",
+
+            "filters_data_type": "int8x32",
+            "filters_tensor_format": "NCHW_VECT_C",
+
+            "accumulator_data_type": "int32",
+            "output_data_type": "float",
+            "output_tensor_format": "NCHW"
+        }
+    },
+    "experiments": [
+        {
+            "batch": [128, 64, 32, 16],
+            "channels": [32, 64],
+            "height": 256,
+            "width": 256,
+
+            "filters": [32, 64, 128],
+            "filter_width": 3,
+            "filter_height": 3,
+            "verbose": 1,
+            
+            "configs":[
+                "float", "half", "int8x4", "int8x4_ext", "uint8x4", "uint8x4_ext", "int8x32"
+            ]
+        },
+        {
+            "batch": [128, 64, 32, 16],
+            "channels": [32, 64, 128, 256],
+            "height": 128,
+            "width": 128,
+
+            "filters": [32, 64, 128, 256, 512],
+            "filter_width": 3,
+            "filter_height": 3,
+            "verbose": 1,
+            
+            "configs":[
+                "float", "half", "int8x4", "int8x4_ext", "uint8x4", "uint8x4_ext", "int8x32"
+            ]
+        },
+        {
+            "batch": [128, 64, 32, 16],
+            "channels": [32, 64, 128, 256, 512],
+            "height": 64,
+            "width": 64,
+
+            "filters": [32, 64, 128, 256, 512, 1024],
+            "filter_width": 3,
+            "filter_height": 3,
+            "verbose": 1,
+            
+            "configs":[
+                "float", "half", "int8x4", "int8x4_ext", "uint8x4", "uint8x4_ext", "int8x32"
+            ]
+        },
+        {
+            "batch": [128, 64, 32, 16],
+            "channels": [32, 64, 128, 256, 512, 1024],
+            "height": 32,
+            "width": 32,
+
+            "filters": [32, 64, 128, 256, 512, 1024],
+            "filter_width": 3,
+            "filter_height": 3,
+            "verbose": 1,
+            
+            "configs":[
+                "float", "half", "int8x4", "int8x4_ext", "uint8x4", "uint8x4_ext", "int8x32"
+            ]
+        },
+        {
+            "batch": [128, 64, 32, 16],
+            "channels": [32, 64, 128, 256, 512, 1024, 2048],
+            "height": 16,
+            "width": 16,
+
+            "filters": [32, 64, 128, 256, 512, 1024, 2048],
+            "filter_width": 3,
+            "filter_height": 3,
+            "verbose": 1,
+            
+            "configs":[
+                "float", "half", "int8x4", "int8x4_ext", "uint8x4", "uint8x4_ext", "int8x32"
+            ]
+        },
+        {
+            "batch": [128, 64, 32, 16],
+            "channels": [32, 64, 128, 256, 512, 1024, 2048],
+            "height": 8,
+            "width": 8,
+
+            "filters": [32, 64, 128, 256, 512, 1024, 2048],
+            "filter_width": 3,
+            "filter_height": 3,
+            "verbose": 1,
+            
+            "configs":[
+                "float", "half", "int8x4", "int8x4_ext", "uint8x4", "uint8x4_ext", "int8x32"
+            ]
+        }
+    ]
+}

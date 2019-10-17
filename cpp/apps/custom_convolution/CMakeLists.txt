@@ -1,0 +1,6 @@
+add_executable(compare compare.cu cudnn2DConvolution.cuh custom2DConvolution.cuh)
+target_compile_features(compare PRIVATE cxx_std_11)
+target_compile_options(compare PRIVATE "-gencode=arch=compute_${CUDA_ARCH},code=sm_${CUDA_ARCH}" "-lineinfo" "--ptxas-options=-v")
+target_link_libraries(compare "${CUDA_LIBRARIES}" "${TORCH_LIBRARIES}" libcudnn.so)
+target_include_directories(compare PRIVATE "${CUDA_INCLUDE_DIRS}" cudnn.h)
+set_target_properties(compare PROPERTIES CUDA_SEPERABLE_COMPILATION ON)
